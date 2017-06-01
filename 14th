@@ -6,7 +6,7 @@
   </head>
 <body>
 
-  <h3>污染城市列表</h3>
+  <h3>清洁城市列表</h3>
   <ul id="aqi-list">
 <!--
     <li>第一名：福州（样例），10</li>
@@ -30,7 +30,7 @@ var aqiData = [
   */
   
   function compare(a, b) {
-    return b[1] - a[1];
+    return a[1] - b[1];
   };
   
   aqiData.sort(compare); 
@@ -38,7 +38,7 @@ var aqiData = [
   var mn=["一","二","三","四","五","六"];
   var mm = "";
   for (var i = 0; i < aqiData.length; i++) {
-    if (aqiData[i][1] > 60) {
+    if (aqiData[i][1] < 60) {
       mm += "<li>第" + mn[i] + "名：" + aqiData[i][0] + "，" + aqiData[i][1] + "</li>"
     }
     else {
