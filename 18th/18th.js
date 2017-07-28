@@ -7,12 +7,13 @@ var inputText=document.getElementById("inputText");//取出输入的值
 var p=document.getElementById("number");
 
 function add_input(){
-	
+	//判断是否输入数字
 	if(inputText.value==""){
 		alert("数据不能为空");
 		inputText.value="";
 		return;
 	}else{
+		//正则判断是否为数字
 		var addReg=/^\d+$/;
 		if(!addReg.test(inputText.value)){
 		alert("请输入一个数字！");
@@ -30,12 +31,11 @@ function renderData(){
 	var len=data.length;
 	for(var i=0; i<len; i++){
 		if(data[i]!=""){
-			a += "<a class='number'>"+data[i]+"</a>";
+			a += "<a class='addData' id='data[i]' onclick='this.remove()' >"+data[i]+"</a>";  //点击任何一个元素，则该元素会被删除
 	}
 }
 	var p=document.getElementById("number");
 	p.innerHTML=a;
-	console.log(p);
 	return;
 }
 
@@ -44,12 +44,16 @@ input_left.addEventListener('click',function(){
 	add_input();
 	data.unshift(inputText.value);
 	renderData();
+	inputText.value="";//清空输入栏
+	inputText.focus();
 });
 //右侧入
 input_right.addEventListener('click',function(){
 	add_input();
 	data.push(inputText.value);
 	renderData();
+	inputText.value="";//清空输入栏
+	inputText.focus();
 });
 //左侧出
 output_left.addEventListener('click',function(){
@@ -64,8 +68,6 @@ output_right.addEventListener('click',function(){
 	data.pop();
 	renderData();
 });
-
-//点击任何一个元素，则该元素会被删除
 
 
 
