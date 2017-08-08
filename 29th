@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css" >
+	body{
+		margin: 60px auto;
+		font-family:  Microsoft JhengHei;
+	}
+	li{list-style-type: none;
+		margin-top: 10px;
+	}
+	
+	a{
+		font-size: 25px;
+		font-weight: 800;
+	}
+	button{
+		background-color: #598BCF;
+		border: 2px solid #2A70B9;
+		margin-left: 30px;
+		border-radius: 5px;
+		width: 90px;
+		height: 45px;
+		color: #fff;
+		font-family:  Microsoft JhengHei;
+		font-weight: bold;
+		font-size: 25px;
+		position: relative;
+		vertical-align: middle;
+		cursor: pointer;
+	}
+	input{
+		margin-left: 30px;
+		width: 320px;
+		height: 45px;
+		border-radius: 5px;
+		border:2px solid #ccc;
+		position: relative;
+		vertical-align: middle;
+		font-size:25px; 
+		outline: 0;
+	}
+	
+	#tips{
+		margin-left: 80px;
+		font-size:18px; 
+		color: #ccc;
+	}
+	
+	
+</style>
+</head>
+
+<body>
+<ul>
+	<li><a>名称</a><input type="text" id="info" /><a><button onClick="validate()">验证</button></a></li>
+	<li><a id="tips">必填，长度为4~16个字符</a></li>		
+</ul>
+	
+	<script type="text/javascript">
+		var inputName = document.getElementById("info");
+		var inputValue = inputName.value;
+		var tipValue=document.getElementById("tips");
+		
+		function validate(){
+			var len=inputValue.length;
+			if(len==0){
+				tipValue.innerHTML = "姓名不能为空";
+				tipValue.style.color="red";
+				inputName.style.border="2px solid red";
+			}else if(len<3&&len>16){
+				tipValue.innerHTML = "请输入长度为4~16位字符";
+				tipValue.style.color="red";
+				inputName.style.color="red"; 
+			}else{
+				tipValue.innerHTML = "名称格式正确";
+				tipValue.style.color="green";
+				inputName.style.color="green"; 
+			}
+		}
+		
+		//当input输入框获得焦点，输入框恢复初始状态
+		inputName.addEventListener("focus", function (){
+			tipValue.innerHTML = "必填，长度为4~16个字符";
+			tipValue.style.color="#ccc";
+			inputName.style.color="#ccc";
+		})
+		
+		//判断输入内容的长度，不一定要用正则，也可以用charCodeAt( index )
+		
+		
+    </script>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
