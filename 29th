@@ -61,23 +61,30 @@
 	
 	<script type="text/javascript">
 		var inputName = document.getElementById("info");
-		var inputValue = inputName.value;
 		var tipValue=document.getElementById("tips");
 		
+		//正则部分
+		var trimReg = /^\s+|\s+$/g;  // 去除首尾空格
+    	        var chineseReg = /[\u4E00-\uFA29]|[\uE7C7-\uE7F3]/g;
+    	        var lenReg = /^.{4,16}$/;    // 长度验证
+		
+		
 		function validate(){
-			var len=inputValue.length;
-			if(len==0){
+                        //把汉字变成两个字符
+			var inputVal=inputName.value ;
+			var inputStr=inputVal.replace( chineseReg ,"--").replace(trimReg,"");
+			if(inputStr.length==0){
 				tipValue.innerHTML = "姓名不能为空";
 				tipValue.style.color="red";
 				inputName.style.border="2px solid red";
-			}else if(len<3&&len>16){
+			}else if(!lenReg.test(inputStr)){
 				tipValue.innerHTML = "请输入长度为4~16位字符";
 				tipValue.style.color="red";
-				inputName.style.color="red"; 
+				inputName.style.border="2px solid red"; 
 			}else{
 				tipValue.innerHTML = "名称格式正确";
 				tipValue.style.color="green";
-				inputName.style.color="green"; 
+				inputName.style.border="2px solid green"; 
 			}
 		}
 		
@@ -85,10 +92,10 @@
 		inputName.addEventListener("focus", function (){
 			tipValue.innerHTML = "必填，长度为4~16个字符";
 			tipValue.style.color="#ccc";
-			inputName.style.color="#ccc";
+			inputName.style.border="2px solid #ccc";
 		})
 		
-		//判断输入内容的长度，不一定要用正则，也可以用charCodeAt( index )
+		
 		
 		
     </script>
@@ -96,6 +103,20 @@
 	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
