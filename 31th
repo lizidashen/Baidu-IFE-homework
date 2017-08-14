@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+	body{
+		margin: 30px ;
+		font-family:  Microsoft JhengHei;
+	}
+	
+	a{
+		font-size: 16px;
+		font-weight: 800;
+		width: 80px;
+		float: left;
+		margin-top: 18px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	select{
+		float:left ;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		width: 150px;
+		height: 35px;
+		font-family:  Microsoft JhengHei;
+		font-weight: bold;
+		font-size: 15px;
+		vertical-align: middle;
+		cursor: pointer;
+		margin-right: 30px;
+		margin-top: 10px;
+		text-align: center;
+	}
+	
+	#university{
+		width: 250px;
+	}
+	#company{
+		display: none;
+	}
+	
+	.companyName{
+		float:left ;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		width: 250px;
+		height: 30px;
+		font-family:  Microsoft JhengHei;
+		font-weight: bold;
+		font-size: 15px;
+		vertical-align: middle;
+		text-align: center;
+		margin-top: 10px;
+	}
+	
+</style>
+</head>
+
+<body>
+	<form>
+		<div>
+		    <a></a>
+			<input type="radio"  onclick="radioChange()" id="students" name="radio" value="在校生"/>在校生
+			<input type="radio"  onclick="radioChangeBack()" id="workers" name="radio" value="非在校生" />非在校生
+		</div>
+		<div id="school">
+			<a>学校</a>
+			<select id="address" name="address">
+				<option id="beijing" value="1">北京</option>
+				<option id="tianjin" value="2">天津</option>
+				<option id="shanghai" value="3">上海</option>
+			</select>
+			<select id="university" name="university">
+				<option class="beijing"  value="1">北京大学</option>
+				<option class="beijing"  value="2">清华大学</option>
+			</select>
+		</div>
+		<div id="company">
+			<a>就业单位</a>
+			<input type="text" name="companyName" class="companyName"/>
+		</div>
+	</form>
+	<script type="text/javascript">
+			var students = document.getElementById("student");
+			var	workers = document.getElementById("worker");
+			var	school = document.getElementById("school");
+			var	company = document.getElementById("company");
+			var address = document.getElementById("address");
+			var university = document.getElementById("university");
+			//这里注意，radio也可以直接加click事件
+			function radioChange(){
+				school.style.display="block";
+				company.style.display="none";
+			}
+			function radioChangeBack(){
+				school.style.display="none";
+				company.style.display="block";
+			}
+			
+			function selectAddress(){
+				var data=[
+					["北京大学","清华大学"],
+					["天津大学","南开大学"],
+					["上海交通大学","同济大学"],
+				]
+				var str="";
+				var selected = data[address.selectedIndex];
+				//老方法，函数渲染，更新表单内容
+				for (var  i=0; i<selected.length; i++) {
+					str +="<option>" + selected[i] +"</option>";
+				}
+				university.innerHTML=str;
+			}
+			//注意用鼠标单击事件，激活函数selectAddress
+				address.onclick=selectAddress;
+			
+	</script>
+</body>
+</html>
