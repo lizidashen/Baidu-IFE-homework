@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>拖动</title>
+    <link href="37th.css" rel="stylesheet" />
+    <script src="37th.js"></script>
+</head>
+<body>
+	<div class="cover" id="cover" onclick="coverOut()"></div>
+	<div class="content">
+		<div class="top">
+			<span class="top-input" id="top-input" onclick="coverIn()">登录</span>
+		</div>
+		<div class="text">
+			<p>点击半透明遮罩或浮出层顶部关闭按钮,关闭浮出层</p>
+			<p>点击页面头部登录按钮,显示浮出层</p>
+			<p>拖拽浮出层顶部,可使其移动</p>
+		</div>
+	</div>
+    <div class="loginPanel" id="loginPanel"> 
+        <div class="ui_boxyClose" id="ui_boxyClose" onclick="coverOut()">
+        	<span class="Close">X</span>
+        </div>
+        <div class="login_logo" id="login_logo">
+        	<p class="loginTitle">登录界面</p>
+        </div>
+        <div class="inputs">
+            <div class="sign-input">
+            	<span>帐　号：</span>
+            	<span>
+            		<input autocomplete="on" class="inputText" type="text"  value="请输入帐号" onblur=""/>
+            	</span>
+            </div>
+            <div class="sign-input">
+            	<span>密　码：</span>
+            	<span>
+            		<input name="p"  maxlength="16" type="password" class="inputText" value="请输入密码" />
+            	</span>
+            </div>
+            <div class="loginButton">
+            	<input class="input" type="button" value="登录">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -19,7 +19,7 @@ function getDateStr(dat){
 	return y + '-' + m + '-' + d;
 }
 function randomBuildData(seed){
-	var returnData =｛｝；//新建一个对象，是粒度构成的
+	var returnData ={};//新建一个对象，是粒度构成的
 	var dat = new Date("2016-01-01");//创建一个日期对象dat，则函数从dat的值开始计算，如果不写则会从当下时间算起
 	var datStr = '';
 	for (var i = 1; i<92;i++){
@@ -41,7 +41,7 @@ function randomColor(){
 }
 
 var aqiSourceData={
-	"北京"：randomBuildData(500),
+	"北京":randomBuildData(500),
 	"上海": randomBuildData(300),
     "广州": randomBuildData(200),
     "深圳": randomBuildData(100),
@@ -55,11 +55,10 @@ var aqiSourceData={
 
 
 //当前选择的日期粒度和城市
-
 var graTimeNow=function(){
 	var graTimeForm=document.getElementsByName("form-gra-time");
 	
-	for (var i=1, i<graTimeForm.length, i++){
+	for (var i=1;i<graTimeForm.length;i++){
 		if(graTimeForm[i].checked){
 			return graTimeForm[i].value;
 		}
