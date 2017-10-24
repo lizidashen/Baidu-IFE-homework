@@ -9,10 +9,10 @@ function selectBox(){
 		$optionYear.html(i + "年");
 		$disYear.append($optionYear);	
 	}
-	for (var j=0; j<12; j++){
+	for (var j=1; j<13; j++){
 		//创建文本节点<option>，即下拉菜单
 		var $optionMonth = $("<option></option>");
-		$optionMonth.html(j + 1 + "月");
+		$optionMonth.html(j  + "月");
 		$disMonth.append($optionMonth);	
 	}
 	
@@ -20,7 +20,7 @@ function selectBox(){
 	var currentDate = new Date();
 	//取现在的时间 年 月
 	var currentYear = currentDate.getFullYear();
-	var currentMonth = currentDate.getMonth() +1;
+	var currentMonth = currentDate.getMonth();
 	currentMonth = (currentMonth<10)?("0"+currentMonth):currentMonth;
 	//把现在的时间 年 月 作为text的value值
 	$myText.val(currentYear + "年" + currentMonth +"月");
@@ -57,11 +57,14 @@ function buildTable(){
 //setFullYear函数来确定当前年当前月的第一天是星期几
 function getWeek(){
 	var yearMonth = new Date();
-	//此处的1指的是本月1号,设定时间为#disYear年#disMonth月 1 号
-	yearMonth.setFullYear(parseInt($("#disYear").val()),parseInt($("#disMonth").val()),1);
-	//getDay()是确定这一天是星期几			    
+	//此处的1指的是本月1号,设定时间为#disYear年#disMonth-1月 1 号
+	yearMonth.setFullYear(parseInt($("#disYear").val()),(parseInt($("#disMonth").val())-1),1);
+	//getDay()是确定这一天是星期几
+	console.log(yearMonth);
 	var selectDay = yearMonth.getDay();
 	return selectDay;
+	
+	
 }
 //确定一个月有多少天
 function getdate(){
@@ -78,20 +81,13 @@ function getdate(){
         return 28;
     }
 }
-function cleanDate(){
-	//清空日历，即对td用each函数遍历
-	
-	/*
-	
-	 */
-}
+
 //给日历内写入日期
 function buildDate(){	
-	
 	var weekday = getWeek();//第一天是星期几，即从星期几开始算
+	console.log(weekday);
 	var dateNum = getdate();//本月有多少天，即循环多少次
 	var date=1;
-	console.log(dateNum);
 	
 	//重写日历 ,令每个td的值重新归零  
 	$("td").each(function(){
@@ -105,7 +101,7 @@ function buildDate(){
         date++;
     }
 	for(i=0;i<42;i++){
-			console.log(tableTds[i]);
+			//console.log(tableTds[i]);
 	}
 }
 //选取下拉列表时刷新日历主体与页面头部 "xxxx年xx月" 字样
