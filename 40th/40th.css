@@ -1,12 +1,10 @@
 .my-text{
-    width:200px;
-    height:30px;
-    outline:none;
+    width:120px;
+    height:20px;
     text-align:center;
     font:0.9rem 'Microsoft YaHei';
-    border:none;
-    border-radius:12px;
-    box-shadow:0 0 15px 0 #ccc inset, 0 0 5px 0 #ccc;
+    border:1 solid #0C4E7C;
+    border-radius:6px;
 }
 div{
     margin:50px auto;
@@ -14,11 +12,9 @@ div{
 div select{
     width:80px;
     height:25px;
-    outline:none;
     font:0.9rem 'Microsoft YaHei';
-    border:none;
+    border:1 solid #0C4E7C;
     border-radius:5px;
-    box-shadow:0 0 15px 0 #ccc inset, 0 0 5px 0 #ccc;
 }
 div select:first-child{
     text-indent:0.5em;
@@ -37,24 +33,25 @@ p{
 th, td{
     width:50px;
     text-align:left;
-    border:2px solid #fff;
+    margin: 1px;
 }
 th{
 	float: left;
 	text-align: center;
 	justify-content: center;
-    font:1.15rem/1.65rem 'Microsoft YaHei';
-    background-color:#ddf;
-    border-radius:2px 2px 10px 10px;
+    font:1em/1.5em 'Microsoft YaHei';
+    background-color:#e8cf6d;
+    border-radius:10px ;
 }
 td{
 	text-align: center;
 	justify-content: center;
     font:1em/1.5em 'Microsoft YaHei';
     height:1.5em;
-    background-color:#eef;
-    border-radius:10px;
+    background-color:#e2deb8;
+    border-radius:5px;
 }
 td:hover{
-    background-color:#32bfbf;
+    background-color:#0C4E7C;
+    color: #fff;
 }

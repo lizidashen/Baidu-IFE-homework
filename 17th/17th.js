@@ -54,28 +54,21 @@ var aqiSourceData={
 //建立每个城市的数据库，seed不同，则随机的范围不同，但是同样的seed，由于都是随机的，所以数据也不一样。至此基础数据构建完毕
 
 
-//当前选择的日期粒度和城市
-var graTimeNow=function(){
-	var graTimeForm=document.getElementsByName("form-gra-time");
-	
-	for (var i=1;i<graTimeForm.length;i++){
-		if(graTimeForm[i].checked){
-			return graTimeForm[i].value;
-		}
-	}
-}
-var selectCityNow=function(){
-	document.getElementById("city-select").value;
-}
+
 
 //用于渲染图表的数据
 var chartData = {};
 
 // 记录当前页面的表单选项
-    var pageState = {
-        nowSelectCity: -1,
-        nowGraTime: "day"
-    }
+var pageState = {
+    nowSelectCity: "北京",
+    nowGraTime: "day"
+}
+
+
+var formGraTime = document.getElementById('form-gra-time');
+var citySelect = document.getElementById('city-select');
+var aqiChartWrap = document.getElementsByClassName('aqi-chart-wrap')[0]; 
 
 //渲染图表
 function renderChart(){
@@ -102,7 +95,7 @@ function graTimeChange(){
 function citySelectChange(){
 // 确定是否选项发生了变化 
 
-// 设置对应数据
+// 设置对应数据 
 
 // 调用图表渲染函数
 }
