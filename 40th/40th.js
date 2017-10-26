@@ -104,7 +104,7 @@ function buildDate(){
 			//console.log(tableTds[i]);
 	}
 }
-//选取下拉列表时刷新日历主体与页面头部 "xxxx年xx月" 字样
+// 选取下拉列表时刷新日历主体与页面头部 "xxxx 年 xx 月" 字样
 function refreshTable(){
 	$("select").click(function(){
 		
