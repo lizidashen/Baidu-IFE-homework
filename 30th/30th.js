@@ -125,7 +125,7 @@ function validate_04(){
 		d04.innerHTML = "邮箱不能为空";
 		d04.style.color="red";
 		inputTd_04.style.border="2px solid red";
-	}else if(!mailReg.test(inputStr_05)){
+	}else if(!mailReg.test(inputStr_04)){
 		d04.innerHTML = "邮箱格式错误";
 		d04.style.color="red";
 		inputTd_04.style.border="2px solid red";
