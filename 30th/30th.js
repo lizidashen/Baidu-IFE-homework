@@ -24,7 +24,7 @@ window.onload=function(){
 	var trimReg = /^\s+|\s+$/g;  // 去除首尾空格
 	var chineseReg = /[\u4E00-\uFA29]|[\uE7C7-\uE7F3]/g;
 	var lenReg = /^.{4,16}$/;    // 长度验证
-	var mailReg =/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}/;
+	var mailReg =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/ ;
 	var phoneReg =/^[1][0-9]{10}$/; 
 		
 
@@ -125,7 +125,7 @@ function validate_04(){
 		d04.innerHTML = "邮箱不能为空";
 		d04.style.color="red";
 		inputTd_04.style.border="2px solid red";
-	}else if(!lenReg.test(inputStr_05)){
+	}else if(!mailReg.test(inputStr_05)){
 		d04.innerHTML = "邮箱格式错误";
 		d04.style.color="red";
 		inputTd_04.style.border="2px solid red";
@@ -138,7 +138,7 @@ function validate_04(){
 }
 
 inputTd_04.addEventListener("focus", function (){
-	d04.innerHTML = "必填，长度为11位数字";
+	d04.innerHTML = "必填，一个或多个字符@一个多个字符.一个或者多个字符";
 	d04.style.color="#ccc";
 	inputTd_04.style.border="2px solid #ccc";
 })
