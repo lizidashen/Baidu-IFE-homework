@@ -15,4 +15,4 @@ javascript  html  css
 ##### 2-31th demo：http://htmlpreview.github.io/?https://github.com/lizidashen/Baidu-IFE-homework/blob/master/31th.html
 ##### 2-37th demo：http://htmlpreview.github.io/?https://github.com/lizidashen/Baidu-IFE-homework/blob/master/37th/37th.html
 ##### 2-40th demo：http://htmlpreview.github.io/?https://github.com/lizidashen/Baidu-IFE-homework/blob/master/40th/40th.html
-##### 2-40th demo：http://htmlpreview.github.io/?https://github.com/ustbhuangyi/vue-sell/blob/master/index.html
+##### 2-40th demo：http://htmlpreview.github.io/?https://github.com/lizidashen/vue-elema/blob/master/index.html
