@@ -1,0 +1,59 @@
+/*背景白色部分*/
+.compile_body{
+	z-index: -1;
+	margin: 80px 120px;
+	padding: 40px;
+	background: white;
+}
+/*头部 请输入标题 部分*/
+.compile_title_box{
+	display: flex;
+	padding-bottom: 40px;
+	border-bottom: 2px solid #b6b5b5;	
+}
+.compile_title{
+	margin: 0 auto;
+	border: none;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+/*编辑区 添加问题 部分*/
+/*编辑区 可选按钮 部分*/
+.compile_space{
+	margin: 80px 120px;
+	border: 1px solid #b6b5b5;
+}
+.compile_space_hidebutton{
+	display: flex;
+	justify-content: center;
+}
+.compile_space_hidebutton button{
+	margin: 20px;
+	width: 120px;
+	color: black;
+	background-color:#EFEFEF ;
+	border: 1px solid #ccc;
+}
+/*编辑区 添加问题 部分*/
+.compile_button{
+	display: flex;
+	justify-content: center;
+	height: 120px;
+	background-color: #EFEFEF;				
+}
+.absolute_center{
+	font-size: 20px;
+	line-height: 120px;	
+}
+/*底部 截止日期 部分*/
+.button_body {
+	padding-top: 40px;
+	border-top: 2px solid #b6b5b5;	
+}
+.button{
+	width: 120px;
+	color: black;
+	background-color:white ;
+	border: 1px solid #ccc;
+}

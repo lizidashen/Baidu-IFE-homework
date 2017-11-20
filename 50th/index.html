@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+	<title>问卷调查</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	
+</head>
+<body>
+<!-- 建立两个大的div 一个是在总数组不为零的时候出现,另一个在总数组为零的时候出现
+ --><div class="container">
+		<div class="head row">
+			<div class="head_log col-xs-2">
+				<i class="iconfont">&#xe79e;</i>
+				问卷管理
+			</div>
+			<div class="my_fifle col-xs-2"><a href="index.html">我的问卷</a></div>
+		</div>
+		
+		<article class="compile_body">
+			<!-- 为零的时候出现 -->
+			<div class="create_question_body_bg">
+				<div class="create_question_body">
+					<button>
+						<i class="iconfont">&#xe64f;</i>
+						新建问卷 
+					</button>
+				</div>	
+			</div>
+			<!-- 当数组中有数据的时候出现 -->
+			<div class="compile_body">
+				<div class="compile_from_title row">
+					<span class="compile_body_span_title col-xs-4 col-xs-offset-1">标题</span>
+					<span class="compile_body_span_time col-xs-2">时间</span>
+					<span class="compile_body_span_state col-xs-2">状态</span>
+					<span class="compile_body_span_operation col-xs-1">操作</span>
+					<button class="compile_body_span_button col-xs-2">
+						＋ 新建问卷
+					</button> 
+				</div> <!-- 标题区域 -->
+				<div id="all_form_area" class="list-group">
+					
+				</div>	 <!-- 表单区 -->
+				<div class="all_select_area row">
+					<input type="checkbox" name="" id = "all_select" class="col-xs-1">
+					<label class="col-xs-1">全选</label>
+					<button class="col-xs-1">删除</button> 
+				</div>	 <!-- 全选区 -->
+			</div>	
+		</article>		
+	</div>
+	<script type="text/javascript" src='js/jquery-3.1.0.js'></script>
+	<script type="text/javascript" src='js/index.js'></script>
+ </body>
+</html>

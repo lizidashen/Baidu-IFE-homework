@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+	<title>问卷页面编辑</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/compile.css">
+</head>
+<body>
+	<div class="container">
+		<div class="head row">
+			<div class="head_log col-xs-2">
+				<i class="iconfont">&#xe79e;</i>
+				问卷管理
+			</div>
+			<div class="my_fifle col-xs-2"><a href="index.html">我的问卷</a></div>
+		</div>
+		<article class="compile_body">
+			<div class="compile_title_box">
+				<input type="text" name="" class="compile_title text-center" placeholder="请输入标题">
+			</div>  <!-- 标题 -->
+			<div class="compile_box">  <!-- 编辑区 -->
+				<div id="createArea"></div>
+				<div class="compile_space">
+					<!--  存放选项的区域 单选 多选 文本. -->
+					<div class="compile_space_hidebutton">
+						<button id='compile_radio'>单选</button>
+						<button id='compile_multiple'>多选</button>
+						<button id="compile_textbox">文本框</button>
+					</div> 
+					<div class="compile_button">
+						<p class="absolute_center text-center">➕   添加问题</p>
+					</div>
+				</div> <!-- 编辑按钮区域 -->
+			</div>
+			<div class="button_body row">
+				<label class="col-xs-2 text-right ">问卷截止日期</label>
+				<div id="date_box" class="col-xs-5"></div> <!-- 存放日历的位置 -->
+				<div class="col-xs-2 button_border">
+					<button class="button button_style_white  btn btn-primary btn-sm">保存问卷</button>
+				</div>
+				<div class="col-xs-2 button_border">
+					<button class="button button_style_blue  btn btn-primary btn-sm">发布问卷</button>
+				</div>
+			</div>   <!-- 问卷截止日 和保存问卷发布问卷的位置 -->
+		</article>
+	</div>>	
+	<script type="text/javascript" src='js/jquery-3.1.0.js'></script>
+	<script type="text/javascript" src='js/listen.js'></script>
+	<script type="text/javascript" src='js/compile_choice_model.js'></script>
+	<script type="text/javascript" src="js/date.js"></script>
+	
+</body>
+</html>
